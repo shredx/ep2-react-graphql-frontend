@@ -6,7 +6,11 @@ class shredComApp extends React.Component {
         super();
     }
     render(){
-        return(<div>It works</div>)
+        return ( 
+        <div>
+          <div>  <h1>It works</h1></div>
+        </div>
+        );
     }
 }
 
