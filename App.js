@@ -1,17 +1,15 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-class shredComApp extends React.Component {
+export default class ShredComApp extends React.Component {
     constructor(){
         super();
     }
     render(){
-        return ( 
-        <div>
-          <div>  <h1>It works</h1></div>
-        </div>
-        );
+        return (<div>
+            Catalogues
+        </div>) 
     }
 }
 
-ReactDOM.render(<shredComApp />, document.getElementById('app'));
+ReactDOM.render(<ShredComApp />, document.getElementById('app'));
