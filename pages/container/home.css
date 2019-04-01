@@ -1,0 +1,27 @@
+/*this styling is for header container in home page*/
+.header-container{
+    height:10%;
+    width:95%;
+    left:2%;
+    position: fixed;
+    background-color: grey
+}
+/** This styling is for side bar container*/
+.side-container{
+    height:80%;
+    width:20%;
+    left:2%;
+    top:12%;
+    position:fixed;
+    background-color: grey;
+}
+
+/** This styling is for view  container*/
+.view-container{
+    height:80%;
+    width: 72%;
+    left: 25vw;
+    top:12%;
+    position:fixed;
+    background-color: grey;
+}
