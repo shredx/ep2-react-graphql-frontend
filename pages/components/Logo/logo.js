@@ -1,10 +1,10 @@
 import React from 'react';
-import siteLogo from '../../../assets/e-commerce-3.jpg';
-import classes from './Logo.css';
+import './assets/e-commerce-3.jpg';
+import './Logo.css';
 
-const logo = (props) => (
-    <div className={classes.Logo}>
-        <img src={siteLogo} alt={shredComm}></img>
+export const logo = (props) => (
+    <div className = 'Logo'>
+        <img src='./assets/e-commerce-3.jpg' alt='MyApp'></img>
     </div>
 );
 
