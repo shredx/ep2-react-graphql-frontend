@@ -1,0 +1,10 @@
+/*this styling is used for the main div*/
+.catalogMainDiv{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.catalogMainDiv div {
+    align-content: center;
+    align-items: center;
+}

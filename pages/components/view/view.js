@@ -1,27 +1,23 @@
 import React, {Component} from 'react';
-import {CatalogDetailsComponent} from './catalogDetails/catalogDetails'
-import {MyOrderComponent} from './myOrders/myOrders'
-import {MyCartComponent} from './myCarts/myCarts'
+import CatalogDetailsComponent from './catalogDetails/catalogDetails';
+import MyOrderComponent from './myOrders/myOrders';
+import MyCartComponent from './myCarts/myCarts';
+import '../../../services/fetchData'
 
 /**
- * This Component is the fixeimporc {CatalogDetailsComponent} from './catalogDetails/catalogDetails'
-d view component of shredCom App
+ * This Component is the view component of shredCom App
  */
-class ViewComponent extends React.Component {
+export default class ViewComponent extends React.Component {
     constructor() {
         super()
         this.state = {
-            viewUrl: 'catalog',
-            catalogDetails: {
-                Id: '',
-                name: '',
-                productDetails: [],
-                imageUrl: '',
-            }
+            viewUrl : 'catalog'
         }
+ 
     }
 /**this function will render the respective component called after routing**/
    componentRendered = ()=> {
+       console.log("i am here ",this.state)
 	    if(this.state.viewUrl == "myorder"){
 		return <MyOrderComponent/>
 	    }
@@ -34,17 +30,18 @@ class ViewComponent extends React.Component {
 
     }
 /** this will be called when component is mounted*/
-    ComponentWillMount(){
+    componentDidMount(){
+    
 	if(this.props.match && this.props.match.params.url)
 	    this.setState({
 			viewUrl: this.props.match.params.url
 			    })
     }
     render(){
-        return( <React.Fragment>View component
-	{this.componentRendered}
+        return( <React.Fragment>
+	{this.componentRendered()}
             </React.Fragment>
             ) 
     }
 }
-export default ViewComponent
+
