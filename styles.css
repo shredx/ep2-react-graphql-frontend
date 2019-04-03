@@ -1,0 +1,10 @@
+ /*this styling is for the app container*/ 
+ .app-container{
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+}
