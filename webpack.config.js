@@ -6,6 +6,11 @@ module.exports = {
     path: path.join(__dirname, "/dist"),
     filename: "index.js"
   },
+  devServer: {
+      inline: true,
+      host: 'localhost',
+      port: 4201
+	},
   module: {
     rules: [
       {
@@ -14,7 +19,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           query: {
-            presets: ['es2015', 'react']
+            presets: ['es2015', 'react','stage-0']
          },
         },
       },
