@@ -7,12 +7,12 @@ const UPDATE_CART_DETAILS = ""
 /**
  * function call to fetch Orders
  */
-const fetchOrderDetails = () => {
+export const updateOrderDetails = () => {
     return "fetchOrddrs"
 }
 /**
  * function call to fetch cart details
  */
-const fetchCartDetails = () => {
+export const updateCartDetails = () => {
     return "fetchCart"
 }

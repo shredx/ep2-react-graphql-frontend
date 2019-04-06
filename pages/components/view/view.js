@@ -10,33 +10,20 @@ import '../../../services/fetchData'
 export default class ViewComponent extends React.Component {
     constructor() {
         super()
-        this.state = {
-            viewUrl : 'catalog'
-        }
- 
     }
 /**this function will render the respective component called after routing**/
    componentRendered = ()=> {
-       console.log("i am here ",this.state)
-	    if(this.state.viewUrl == "myorder"){
+	    if(this.props.url == "My Orders"){
 		return <MyOrderComponent/>
 	    }
-	    if(this.state.viewUrl == "mycart"){
+	    if(this.props.url == "My Cart"){
 		return <MyCartComponent/>
 	    }
-	    if(this.state.viewUrl == "catalog"){
+	    if(this.props.url == "Catalog"){
 		return <CatalogDetailsComponent/>
 	    }
+    }
 
-    }
-/** this will be called when component is mounted*/
-    componentDidMount(){
-    
-	if(this.props.match && this.props.match.params.url)
-	    this.setState({
-			viewUrl: this.props.match.params.url
-			    })
-    }
     render(){
         return( <React.Fragment>
 	{this.componentRendered()}
