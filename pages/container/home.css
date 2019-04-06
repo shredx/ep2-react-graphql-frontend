@@ -20,12 +20,12 @@
 
 /** This styling is for view  container*/
 .view-container{
-    height:80%;
+    height:86%;
     width: 72%;
     left: 25vw;
     top:12%;
     position:fixed;
-    background-color: grey;
+    background-color: #e2e0cd;
 }
 
 .side-container span {
