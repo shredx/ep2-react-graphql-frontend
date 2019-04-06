@@ -1,4 +1,10 @@
 /**THis styling is for the card div*/
 .cardDiv {
     margin-left: 1vw;
+    max-height: 106%;
+    cursor: pointer;
+}
+
+.cardDiv img {
+    width:50%;
 }

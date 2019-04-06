@@ -1,0 +1,19 @@
+/** it represents the main product card div*/
+.productCardDiv{
+    height: 100%;
+}
+.productCardDiv img {
+    height: 60%
+}
+/** it is the styling for add to cart*/
+.productCartDiv {
+    display: flex;
+}
+/** styling for cart button*/
+.cartbtn {
+  float: right
+}
+/** styling for btn div*/
+.productbtnDiv {
+    width: 120%;
+}
