@@ -28,10 +28,10 @@ export default class CatalogDetailsComponent extends React.Component {
     render(){
         return( <React.Fragment>
             <div className='catalogMainDiv'>
-                <div>
+                    <div className='catalogImageDiv'>
                     <img src = {this.state.catalogDetails.imageUrl} alt={this.state.catalogDetails.name}/>
-                </div>
-                <div>
+                    </div>
+                <div className='productDiv'>
                     <ProductMenuComponent products={this.state.catalogDetails.productDetails}/>)
                 </div>
             </div>

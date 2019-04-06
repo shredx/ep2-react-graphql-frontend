@@ -7,7 +7,7 @@ export default class MyOrderComponent extends React.Component {
         super()
     }
     render(){
-        return( <React.Fragment>Catalog Details Component
+        return( <React.Fragment>Catalog Orders Component
             </React.Fragment>
             ) 
     }

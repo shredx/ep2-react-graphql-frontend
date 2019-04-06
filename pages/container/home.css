@@ -8,12 +8,14 @@
 }
 /** This styling is for side bar container*/
 .side-container{
-    height:80%;
+    max-height:80%;
     width:20%;
     left:2%;
     top:12%;
     position:fixed;
-    background-color: grey;
+    display:flex;
+    flex-direction: column;
+    background-color: #f8f9fa
 }
 
 /** This styling is for view  container*/
@@ -24,4 +26,13 @@
     top:12%;
     position:fixed;
     background-color: grey;
+}
+
+.side-container span {
+    padding: 0.5vw;
+    border: 0.2vw solid grey
+}
+
+.side-container span:not(:last-child){
+    border-bottom: 0
 }
