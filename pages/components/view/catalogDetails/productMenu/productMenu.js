@@ -9,7 +9,7 @@ export default class ProductMenuComponent extends React.Component {
     }
     render(){
         return( <React.Fragment>
-            {this.props.products.map((p,index) => <ProductCardComponent productDetails={this.props.productDetails} key={p.Id?p.Id:index} product={p}/>)}
+            {this.props.products.map((p,index) => <ProductCardComponent productDetails={this.props.productDetails} key={p.ID?p.ID:index} product={p}/>)}
             </React.Fragment>
             ) 
     }

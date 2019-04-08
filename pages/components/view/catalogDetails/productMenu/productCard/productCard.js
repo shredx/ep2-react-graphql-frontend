@@ -35,10 +35,10 @@ export default class ProductCardComponent extends React.Component {
     render(){
         return( <React.Fragment>
             <div className="card cardDiv" onClick={this.productDetails}>
-  <img className="card-img-top" src={this.props.product.imageUrl} alt={this.props.product.title}/>
+  <img className="card-img-top" src={this.props.product.Image} alt={this.props.product.Name}/>
   <div className="card-body">
-    <h5 className="card-title">{this.props.product.title}</h5>
-    <h5 className="card-title">{this.props.product.price}</h5>
+    <h5 className="card-title">{this.props.product.Name}</h5>
+    <h5 className="card-title">${this.props.product.Price}</h5>
   </div>
 </div>
             </React.Fragment>

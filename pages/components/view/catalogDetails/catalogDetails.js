@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './catalogDetails.css'
-import { fetchCatalogDetails } from '../../../../services/fetchData';
+import { fetchCatalogDetails } from '../../../../services/graphqlAddSchema';
 import ProductMenuComponent from './productMenu/productMenu';
 import ProductDetailsComponent from '../productDetails/productDetails';
 /**
@@ -13,54 +13,43 @@ export default class CatalogDetailsComponent extends React.Component {
             showProduct: false,
             product: [],
             catalogDetails: {
-                Id: 1,
-                name: 'Food',
-                productDetails: [{
-                    imageUrl: 'https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078',
-                    title: 'Apple',
-                    price: '$4',
-                    Id: 2,
-                },{
-                    imageUrl: 'https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078',
-                    title: 'Apple',
-                    price: '$5',
-                    Id: 1
-                },{
-                    imageUrl: 'https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078',
-                    title: 'Apple',
-                    price: '$6',
-                    Id: 3,
-                },{
-                    imageUrl: 'https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078',
-                    title: 'Apple',
-                    price: '$7',
-                    Id: 4,
-
-                },{
-                    imageUrl: 'https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078',
-                    title: 'Apple',
-                    price: '$8',
-                    Id: 5,
-                },{
-                    imageUrl: 'https://media.istockphoto.com/photos/red-apple-with-leaf-picture-id683494078',
-                    title: 'Apple',
-                    price: '$7',
-                    Id: 6,
-                }],
-                imageUrl: './assets/e-commerce-3.jpg',
+                Products: [],
             }
-        }
+    }
+}
+
+    /**
+    * This lifeCycle is called to control rendering if same category is hit again
+    */
+    shouldComponentUpdate(nextState,nextProps){
+        //return boolean on the basis of Id
+        return nextProps.Id != this.props.Id
+    }
+    /**
+     * this function would be used to fetch category details
+     */
+    fetchCategory(){
+        //calling the catalogDetails API
+        fetchCatalogDetails(this.props.Id).then( data => {
+        //set the state accordingly
+        this.setState({
+                catalogDetails: {...data.data.data.Category},
+                })
+            })
     }
     /**
      * THis function is called after component is mounted and here we would fetch the catalog Details
      */
     componentDidMount(){
-        //calling the catalogDetails API
-        let data = fetchCatalogDetails()
-        //set the state accordingly
+        this.fetchCategory();
     }
+    /**
+     * This lifecycle would be used if some other category is clicked
+     */
     componentDidUpdate(){
-        console.log(this.state.showProduct)
+        if(this.props.Id != this.state.catalogDetails.ID){
+            this.fetchCategory();
+        }
     }
     /**
      * this function is called to set up the product details choosen
@@ -80,7 +69,7 @@ export default class CatalogDetailsComponent extends React.Component {
         if(this.state.showProduct){
             return <ProductDetailsComponent product={this.state.product}/>
         }else{
-           return  <img src = {this.state.catalogDetails.imageUrl} alt={this.state.catalogDetails.name}/>
+           return  <img src = {this.state.catalogDetails.Image} alt={this.state.catalogDetails.Name}/>
         }
     }
     render(){
@@ -90,7 +79,7 @@ export default class CatalogDetailsComponent extends React.Component {
                     {this.viewDetails()}
                     </div>
                 <div className='productDiv'>
-                    <ProductMenuComponent productDetails={(product) => this.productDetails(product)} products={this.state.catalogDetails.productDetails}/>)
+                    <ProductMenuComponent productDetails={(product) => this.productDetails(product)} products={this.state.catalogDetails.Products}/>)
                 </div>
             </div>
             </React.Fragment>

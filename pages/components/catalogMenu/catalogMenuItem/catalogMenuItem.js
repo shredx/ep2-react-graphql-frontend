@@ -11,13 +11,13 @@ export default class CatalogMenuItemComponent extends React.Component {
      * this function is called when any category is clicked 
      */
     updateCategoryId= () => {
-        this.props.updateId(this.props.category.id)
+        this.props.updateId(this.props.category.ID)
     }
 
     render(){
         return( <React.Fragment>
           <span onClick={this.updateCategoryId}>
-              <a className ='nav-link' to="#" value={this.props.category.id}>{this.props.category.name}</a>
+              <a className ='nav-link' to="#" value={this.props.category.ID}>{this.props.category.Name}</a>
               </span>              
             </React.Fragment>
             ) 
