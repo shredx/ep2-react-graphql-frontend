@@ -20,7 +20,7 @@ export default class ViewComponent extends React.Component {
 		return <MyCartComponent/>
 	    }
 	    if(this.props.url == "Catalog"){
-		return <CatalogDetailsComponent/>
+		return <CatalogDetailsComponent Id = {this.props.Id}/>
 	    }
     }
 

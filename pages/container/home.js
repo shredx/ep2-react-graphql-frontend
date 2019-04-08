@@ -12,7 +12,8 @@ export default class HomeComponent extends React.Component {
     constructor(){
         super();
         this.state = {
-            viewPage: ''
+            viewPage: '',
+            Id: 1,
         }
     }
     /**
@@ -22,7 +23,8 @@ export default class HomeComponent extends React.Component {
      */
     updateContent = (val,id) => {
         this.setState({
-            viewPage:val
+            viewPage:val,
+            Id: id ? id:1
         })
     }
 
@@ -34,7 +36,7 @@ export default class HomeComponent extends React.Component {
             </div>
             <div className="side-container"><CatalogMenuComponent update={(val,id)=>this.updateContent(val,id)}/>
             </div>
-            <div className="view-container" ><ViewComponent url={this.state.viewPage} />
+            <div className="view-container" ><ViewComponent Id={this.state.Id} url={this.state.viewPage} />
             </div>
            
             </React.Fragment>

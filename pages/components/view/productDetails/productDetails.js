@@ -26,11 +26,12 @@ export default class ProductDetailsComponent extends React.Component {
     render(){
         return( <React.Fragment>
             <div className="card productCardDiv">
-  <img className="card-img-top" src={this.props.product.imageUrl} alt={this.props.product.title}/>
+  <img className="card-img-top" src={this.props.product.Image} alt={this.props.product.Name}/>
   <div className="card-body">
-    <h5 className="card-title">{this.props.product.title}</h5>
+  <h6>{this.props.product.Description.length > 100? this.props.product.Description.substring(0,100)+'...':this.props.product.Description}</h6>
+    <h5 className="card-title">{this.props.product.Name}</h5>
     <div className='productCartDiv'>
-    <h5 className="card-title">{this.props.product.price}</h5>
+    <h5 className="card-title">${this.props.product.Price}</h5>
     <div className='productbtnDiv'>
     <a href="#" className="btn btn-primary cartbtn"  onClick={this.addProduct}>{this.state.statusMsg?'Added to Cart':'Add to Cart'}</a>
   </div>
