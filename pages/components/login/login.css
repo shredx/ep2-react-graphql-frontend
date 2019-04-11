@@ -1,0 +1,5 @@
+/*this styling is for login btn div*/
+.loginBtnDiv{
+    display:flex;
+    flex-direction: row;
+}

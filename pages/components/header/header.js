@@ -3,6 +3,7 @@ import './header.css'
 import MyOrderComponent from '../view/myOrders/myOrders';
 import MyCartComponent from '../view/myCarts/myCarts';
 import HomeComponent from '../../container/home';
+import { config } from '../../../assets/config';
 /**
  * This Component is the fixed header component of shredCom App
  */
@@ -29,10 +30,10 @@ export default class HeaderComponent extends React.Component {
           <ul className="navbar-nav mr-auto" onClick={this.contentChange}>
            
             <li className="nav-item">
-              <a className="nav-link" to="#">My Cart</a>
+              <a className="nav-link" to="#">{config.CART_ROUTE}</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" to="#">My Orders</a>
+              <a className="nav-link" to="#">{config.ORDER_ROUTE}</a>
             </li>
           </ul>        
         </div>
