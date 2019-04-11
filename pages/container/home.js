@@ -5,6 +5,7 @@ import CatalogMenuComponent from '../components/catalogMenu/catalogMenu';
 import ViewComponent from '../components/view/view';
 import MyOrderComponent from '../components/view/myOrders/myOrders';
 import MyCartComponent from '../components/view/myCarts/myCarts';
+import LoginComponent from '../components/login/login';
 /**
  * This component is the home page of shredCom App
  */
@@ -26,19 +27,35 @@ export default class HomeComponent extends React.Component {
             viewPage:val,
             Id: id ? id:1
         })
+        
+    }
+    /**
+     * This function decides whether user login page is to be rendered or not
+     */
+    authUser = () => {
+        if(localStorage.getItem('user')){
+            return (<div>
+                <div className="header-container" ><HeaderComponent update={(val)=>this.updateContent(val)}/>
+                </div>
+                <div className="side-container"><CatalogMenuComponent update={(val,id)=>this.updateContent(val,id)}/>
+                </div>
+                <div className="view-container" ><ViewComponent Id={this.state.Id} url={this.state.viewPage} />
+                </div>
+                </div>
+            )
+        }else{
+            return (
+                <div className='login-container'>
+                    <LoginComponent/>
+                    </div>
+            )
+        }
     }
 
     render(){
+        
         return( <React.Fragment>
-            
-       
-            <div className="header-container" ><HeaderComponent update={(val)=>this.updateContent(val)}/>
-            </div>
-            <div className="side-container"><CatalogMenuComponent update={(val,id)=>this.updateContent(val,id)}/>
-            </div>
-            <div className="view-container" ><ViewComponent Id={this.state.Id} url={this.state.viewPage} />
-            </div>
-           
+           {this.authUser()}
             </React.Fragment>
             ) 
     }

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import CatalogDetailsComponent from './catalogDetails/catalogDetails';
 import MyOrderComponent from './myOrders/myOrders';
 import MyCartComponent from './myCarts/myCarts';
-import '../../../services/fetchData'
+import { config } from '../../../assets/config';
 
 /**
  * This Component is the view component of shredCom App
@@ -13,13 +13,13 @@ export default class ViewComponent extends React.Component {
     }
 /**this function will render the respective component called after routing**/
    componentRendered = ()=> {
-	    if(this.props.url == "My Orders"){
+	    if(this.props.url == config.ORDER_ROUTE){
 		return <MyOrderComponent/>
 	    }
-	    if(this.props.url == "My Cart"){
+	    if(this.props.url == config.CART_ROUTE){
 		return <MyCartComponent/>
 	    }
-	    if(this.props.url == "Catalog"){
+	    if(this.props.url == config.CATALOG_ROUTE){
 		return <CatalogDetailsComponent Id = {this.props.Id}/>
 	    }
     }

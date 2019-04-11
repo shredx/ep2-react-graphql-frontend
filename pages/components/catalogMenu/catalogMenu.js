@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import CatalogMenuItemComponent from './catalogMenuItem/catalogMenuItem';
 import { fetchCatalogList } from '../../../services/graphqlAddSchema';
+import { config } from '../../../assets/config';
 /**
  * This Component is the fixed side component of shredCom App
  */
@@ -26,7 +27,7 @@ export default class CatalogMenuComponent extends React.Component {
      */
     render(){
         return( <React.Fragment>
-            {this.state.categoryDetails.map(cat => <CatalogMenuItemComponent category={cat} updateId={Id => this.props.update('Catalog',Id)} key={cat.ID}/>)}
+            {this.state.categoryDetails.map(cat => <CatalogMenuItemComponent category={cat} updateId={Id => this.props.update(config.CATALOG_ROUTE,Id)} key={cat.ID}/>)}
             </React.Fragment>
             ) 
     }

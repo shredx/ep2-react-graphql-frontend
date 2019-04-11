@@ -27,7 +27,23 @@
     position:fixed;
     background-color: #e2e0cd;
 }
-
+/*this sstyle is for login component container*/
+.login-container{
+    height:100%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    background-color: #e2e0cd;
+}
+/*this sstyle is for login main container*/
+.login-container div{
+    height:30vw;
+    width: 40vw;
+    display:flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin: auto;
+}
 .side-container span {
     padding: 0.5vw;
     border: 0.2vw solid grey
