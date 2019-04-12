@@ -6,8 +6,8 @@ export const config = {
 }
 
 export const label = {
-    "NAME": "Name",
-    "NUMBER": "Number",
+    "NAME": "NAME",
+    "NUMBER": "NUMBER",
     "PASSWORD": "PASSWORD",
     "LOGIN": "LOGIN",
     "SIGNUP": "SIGNUP"

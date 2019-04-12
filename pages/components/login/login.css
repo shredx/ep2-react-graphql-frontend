@@ -1,5 +1,37 @@
 /*this styling is for login btn div*/
-.loginBtnDiv{
+.l_m_d_i_b{
     display:flex;
     flex-direction: row;
+}
+/* This style is for the main input div*/
+.l_m_d_i_i{
+    display:flex;
+    flex-direction: column;
+}
+.l_m_d_i_b > * ,.l_m_d_i> *,.l_m_d_i_i > *{
+    flex:auto;
+}
+/*this style is for login main container*/
+.l_m_d{
+    height:30vw;
+    width: 40vw;
+    display:flex;
+    background-color: #fff;
+    margin: auto;
+}
+/** this styling for inner div of main login div*/
+.l_m_d_i{
+    display:flex;
+    margin: auto;
+    height: 25vw;
+    width: 35vw;
+    flex-direction: column;
+}
+/* this is styling fo input*/
+input{
+    border-width: 0 0 0.2vw 0 ;  
+    width: 100%;
+}
+input:focus{
+    outline-width: 0;
 }
